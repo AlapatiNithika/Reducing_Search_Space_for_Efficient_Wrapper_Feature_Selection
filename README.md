@@ -1,70 +1,85 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Reducing the Search Space for Efficient Wrapper Feature Selection
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This project introduces a hybrid feature selection framework using **Particle Swarm Optimization (PSO)** integrated with wrapper-based evaluation to address the challenges of high-dimensional biomedical data. The goal is to reduce redundant features while maintaining or improving classification accuracy across various real-world datasets such as Lymphoma, Leukemia, MLL, Lung, SRBCT, and Ovarian.
 
-### `npm start`
+## Key Contributions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Achieved **over 99% feature reduction** while preserving high classification accuracy.
+- Designed a **multi-objective PSO-based wrapper method** balancing accuracy and feature compactness.
+- Developed an **interactive ReactJS dashboard** to visualize performance metrics, ROC curves, confusion matrices, and feature reduction.
+- Evaluated the model on **six benchmark datasets**, achieving top accuracies:
+  - Lung: 98.14%
+  - Lymphoma: 97.78%
+  - Ovarian: 97.50%
+  - Leukemia: 95.45%
+  - SRBCT: 90.54%
+  - MLL: 90.91%
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Datasets
 
-### `npm test`
+All datasets are high-dimensional gene/protein expression data:
+- **Lymphoma:** 4,027 features, 66 samples
+- **Leukemia:** 7,129 features, 72 samples
+- **MLL:** 12,582 features, 72 samples
+- **Lung:** 12,600 features, 203 samples
+- **SRBCT:** 2,308 features, 83 samples
+- **Ovarian:** 15,154 features, 253 samples
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Methodology
 
-### `npm run build`
+- **Optimization:** Binary PSO algorithm with adaptive parameter tuning for efficient subset search.
+- **Classifier:** Random Forest (100 estimators) with 5-fold cross-validation.
+- **Fitness Function:** Balances classification accuracy and number of selected features.
+- **Evaluation Metrics:** Accuracy, Precision, Recall, F1-score, Feature Reduction Rate.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technology Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Backend:** Python 3.10, using `scikit-learn`, `numpy`, `pandas`, `matplotlib`, and custom implementations of PSO, GA, GOA.
+- **Frontend:** ReactJS dashboard for interactive exploration of results.
+- **Development Tools:** Google Colab, Visual Studio Code
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Setup Instructions
 
-### `npm run eject`
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/AlapatiNithika/Reducing_Search_Space_for_Efficient_Wrapper_Feature_Selection.git
+   cd search-space-dashboard
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Install dependencies:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   npm install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Run the development server:
 
-## Learn More
+   ```bash
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Open `http://localhost:3000` to view the dashboard.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Usage
 
-### Code Splitting
+* Select datasets from the sidebar to explore feature selection performance.
+* Visualize metrics such as confusion matrices, convergence curves, and feature reduction plots.
+* Compare different methods (PSO, GA, GOA, Filter) across datasets.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This project is intended for academic and research use. Please cite appropriately if you build upon this work.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+*Developed by A.Nithika, V. Sreenithya, M.Kumudvini, B.Shriya under the guidance of Dr. Venkatesh B*
 
-### Advanced Configuration
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
