@@ -1,0 +1,6 @@
+Feature Selection Method,Selected Features,Reduction (%),Accuracy,Precision,Recall,F1-Score
+No Feature Selection,7129,0%,86.99%,85.00%,87.00%,86.00%
+PSO Feature Selection,24,99.78%,95.45%,96.30%,88.89%,91.37%
+Filter Feature Selection,2621,63.12%,89.43%,90.29%,90.21%,90.35%
+GOA Feature Selection,59,99.17%,79.00%,78.50%,79.20%,78.80%
+GA Feature Selection,40,99.44%,69.05%,69.00%,69.00%,69.00%

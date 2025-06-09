@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.perspective {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.fade-in-scale {
+  animation: fadeInScale 0.6s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.dataset-info-container {
+  padding: 20px; /* Add padding around the container */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align content to the start */
+}
+
+.dataset-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.dataset-description {
+  text-align: justify;
+  width: 90%; /* Adjust width to ensure proper wrapping */
+  max-width: 800px; /* Prevents excessively wide text */
+  line-height: 1.6; /* Improves readability */
+  margin: 0 auto;
+  margin-top: 0; /* Centers the text block */
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.fade-in {
+  opacity: 0;
+  transform: translateY(35px); /* Increased from 30px */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: transform, opacity;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-delay-1 {
+  transition-delay: 0.2s;
+}
+.fade-delay-2 {
+  transition-delay: 0.4s;
+}
+.fade-delay-3 {
+  transition-delay: 0.6s;
+}
+.fade-delay-4 {
+  transition-delay: 0.8s;
+}
+.fade-delay-5 {
+  transition-delay: 1s;
+}
+.fade-delay-6 {
+  transition-delay: 1.2s;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
